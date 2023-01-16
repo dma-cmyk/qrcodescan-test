@@ -7,7 +7,9 @@
             var cameraId = devices[0].id;
             const html5QrCode = new Html5Qrcode("reader");
             const qrCodeSuccessCallback = (decodedText, decodedResult) => {
-                alert(decodedText);
+                if (window.confirm('Ok to Confirm, Cancel to Stay here')) {
+                    window.location = decodedText
+                }
             };
             const config = {
                 fps: 25,
